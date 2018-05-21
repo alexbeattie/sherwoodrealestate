@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781FAB2C20B36DAF00E13855 /* ListingDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781FAB2B20B36DAF00E13855 /* ListingDetailController.swift */; };
+		781FAB2E20B36E8700E13855 /* ListingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781FAB2D20B36E8700E13855 /* ListingSlides.swift */; };
+		781FAB3020B3702300E13855 /* AllListingsMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781FAB2F20B3702300E13855 /* AllListingsMapVC.swift */; };
+		781FAB3220B3706100E13855 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781FAB3120B3706100E13855 /* Annotation.swift */; };
+		781FAB3520B3725B00E13855 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781FAB3420B3725B00E13855 /* CustomTabBar.swift */; };
 		7890A63520B353C20090E0A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7890A63420B353C20090E0A2 /* AppDelegate.swift */; };
 		7890A63720B353C20090E0A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7890A63620B353C20090E0A2 /* ViewController.swift */; };
 		7890A63A20B353C20090E0A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7890A63820B353C20090E0A2 /* Main.storyboard */; };
@@ -16,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		781FAB2B20B36DAF00E13855 /* ListingDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingDetailController.swift; sourceTree = "<group>"; };
+		781FAB2D20B36E8700E13855 /* ListingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingSlides.swift; sourceTree = "<group>"; };
+		781FAB2F20B3702300E13855 /* AllListingsMapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllListingsMapVC.swift; sourceTree = "<group>"; };
+		781FAB3120B3706100E13855 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		781FAB3420B3725B00E13855 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		7890A63120B353C20090E0A2 /* sherwoodrealestate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sherwoodrealestate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7890A63420B353C20090E0A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7890A63620B353C20090E0A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +48,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		781FAB3320B3706C00E13855 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				781FAB2F20B3702300E13855 /* AllListingsMapVC.swift */,
+				781FAB3120B3706100E13855 /* Annotation.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
 		7890A62820B353C20090E0A2 = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +78,10 @@
 			children = (
 				7890A63420B353C20090E0A2 /* AppDelegate.swift */,
 				7890A63620B353C20090E0A2 /* ViewController.swift */,
+				781FAB3420B3725B00E13855 /* CustomTabBar.swift */,
+				781FAB2B20B36DAF00E13855 /* ListingDetailController.swift */,
+				781FAB2D20B36E8700E13855 /* ListingSlides.swift */,
+				781FAB3320B3706C00E13855 /* Maps */,
 				7890A63820B353C20090E0A2 /* Main.storyboard */,
 				7890A63B20B353C20090E0A2 /* Assets.xcassets */,
 				7890A63D20B353C20090E0A2 /* LaunchScreen.storyboard */,
@@ -143,7 +166,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7890A63720B353C20090E0A2 /* ViewController.swift in Sources */,
+				781FAB2C20B36DAF00E13855 /* ListingDetailController.swift in Sources */,
+				781FAB3020B3702300E13855 /* AllListingsMapVC.swift in Sources */,
 				7890A64A20B354230090E0A2 /* Listing.swift in Sources */,
+				781FAB3520B3725B00E13855 /* CustomTabBar.swift in Sources */,
+				781FAB2E20B36E8700E13855 /* ListingSlides.swift in Sources */,
+				781FAB3220B3706100E13855 /* Annotation.swift in Sources */,
 				7890A63520B353C20090E0A2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

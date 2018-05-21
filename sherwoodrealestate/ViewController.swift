@@ -30,7 +30,16 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         collectionView?.delegate = self
         
     }
-    
+    func showListingDetailController(_ listing: Listing.listingResults) {
+        let layout = UICollectionViewFlowLayout()
+        let listingDetailController = ListingDetailController(collectionViewLayout: layout)
+        
+        
+        listingDetailController.listing = listing
+        
+        
+        navigationController?.pushViewController(listingDetailController, animated: true)
+    }
     // MARK: - Home CollectionViewController
     
     let homeCollectionView:UICollectionView = {
@@ -51,16 +60,34 @@ class HomeViewController: UICollectionViewController, UICollectionViewDelegateFl
         return cell
     }
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if let count = listings?.count {
+            
+            
+            return count
+        }
+        return 0
+        
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 200)
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let listing = listings?[indexPath.item] {
+            showListingDetailController(listing)
+        }
+        
+    }
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        collectionView?.collectionViewLayout.invalidateLayout()
     }
 }
 
 class HomeCell: UICollectionViewCell {
     var listing: Listing.listingResults? {
         didSet {
+            setupThumbNailImage()
+
             if let theAddress = listing?.StandardFields.UnparsedAddress {
                 nameLabel.text = theAddress
             }
@@ -106,6 +133,18 @@ class HomeCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    let imageView: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFill
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.layer.masksToBounds = true
+        return iv
+    }()
+    func setupThumbNailImage() {
+//        if let thumbnailImageUrl = listing?.photos?.first {
+//            imageView.loadImageUsingUrlString(urlString: thumbnailImageUrl)
+//        }
+    }
     func setupViews() {
         backgroundColor = UIColor.clear
         addSubview(nameLabel)
@@ -117,8 +156,8 @@ class HomeCell: UICollectionViewCell {
         addConstraintsWithFormat(format: "V:[v0]-8-|", views: costLabel)
         
         
-        //        addConstraintsWithFormat(format: "H:|[v0]|", views: imageView)
-        //        addConstraintsWithFormat(format: "V:|[v0]|", views: imageView)
+//        addConstraintsWithFormat(format: "H:|[v0]|", views: imageView)
+//        addConstraintsWithFormat(format: "V:|[v0]|", views: imageView)
         
     }
 }
